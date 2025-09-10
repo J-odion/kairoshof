@@ -21,10 +21,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/kairoshof", label: "Facebook" },
+    { icon: Twitter, href: "https://x.com/kairoshof", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/kairoshof/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/kairos-hof-consultants", label: "LinkedIn" },
   ];
 
   return (
@@ -90,41 +90,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Newsletter & Social */}
-          <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Stay Connected</h4>
-            <p className="text-muted-foreground text-sm mb-4">
-              Subscribe to our newsletter for the latest updates on our sustainable developments.
-            </p>
-            
-            <div className="flex gap-2 mb-6">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-              <Button variant="luxury" size="sm">
-                Subscribe
-              </Button>
-            </div>
-
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <Button 
-                  key={index}
-                  variant="ghost" 
-                  size="icon"
-                  className="hover:bg-primary/10 hover:text-primary"
-                  asChild
-                >
-                  <a href={social.href} aria-label={social.label}>
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                </Button>
-              ))}
-            </div>
           </div>
         </div>
 

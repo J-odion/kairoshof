@@ -108,7 +108,9 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
+      <div className=" pt-56">
+        <Hero />
+      </div>
 
       {/* 5 Years Anniversary Section */}
       <section className="py-20 bg-gradient-to-br from-gold-500/5 via-background to-primary/5">

@@ -39,10 +39,12 @@ const Product = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <div className="top-0">
+        <Navigation />
+      </div>
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-background via-background to-muted/30">
+      <section className="pt-56 pb-16 bg-gradient-to-br from-background via-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="fade-in-up">

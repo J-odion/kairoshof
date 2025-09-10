@@ -15,22 +15,22 @@ const AnniversaryBanner = () => {
           <div className="animate-marquee whitespace-nowrap flex items-center space-x-8">
             <div className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
-              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties!</span>
+              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties! 🎉</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>✨ Limited Time Offer - September to December 2024</span>
+              <span>✨ Limited Time Offer - September to December 2024 ✨</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>🏠 Dream Home Deals - Exclusive Savings on Premium Properties</span>
+              <span>🏠🏠 Dream Home Deals - Exclusive Savings on Premium Properties</span>
             </div>
             <div className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
-              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties!</span>
+              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties! 🎉</span>
             </div>
           </div>
         </div>
         
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+        <div className="absolute right-4 top-1/2 bg-black transform -translate-y-1/2 flex items-center space-x-2">
           <Link to="/anniversary">
             <Button variant="ghost" size="sm" className="text-white hover:bg-white/20 h-8">
               Learn More

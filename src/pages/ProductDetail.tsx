@@ -41,7 +41,7 @@ const ProductDetail = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-background via-background to-muted/30">
+      <section className="pt-56 pb-16 bg-gradient-to-br from-background via-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -99,7 +99,7 @@ const ProductDetail = () => {
                   <Button 
                     variant="luxury" 
                     size="lg" 
-                    className="absolute inset-0 m-auto w-auto h-auto rounded-full"
+                    className="absolute inset-0 m-auto w-4 h-4 rounded-full"
                     onClick={() => setIsVideoOpen(true)}
                   >
                     <Play className="h-6 w-6" />
