@@ -9,7 +9,7 @@ const AnniversaryBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className=" left-0 right-0 z-40 bg-gradient-to-r bg-red-600 from-gold-500 via-gold-600 to-gold-500 text-white overflow-hidden">
+    <div className=" left-0 right-0 z-40 bg-gradient-to-r bg-primary via-gold-600 to-gold-500 text-white overflow-hidden">
       <div className="relative h-12">
         <div className="absolute inset-0 flex items-center">
           <div className="animate-marquee whitespace-nowrap flex items-center space-x-8">

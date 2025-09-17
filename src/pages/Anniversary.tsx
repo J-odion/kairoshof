@@ -32,7 +32,7 @@ const Anniversary = () => {
     setIsVideoOpen(true);
   };
 
-  const saleEndDate = new Date("2024-12-31T23:59:59");
+  const saleEndDate = new Date("2025-12-31T23:59:59");
 
   const highlights = [
     {
@@ -86,7 +86,7 @@ const Anniversary = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-blue,transparent_50%)]" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
@@ -105,7 +105,7 @@ const Anniversary = () => {
               community building, and making homeownership dreams come true across Nigeria.
             </p>
             
-            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
+            <div className="bg-card/50 backdrop-blur-sm justify-center items-center rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
               <h3 className="text-2xl font-semibold text-foreground mb-4">Anniversary Sale Ends In:</h3>
               <CountdownTimer targetDate={saleEndDate} />
             </div>

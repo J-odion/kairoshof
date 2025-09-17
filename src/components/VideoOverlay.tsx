@@ -13,7 +13,7 @@ interface VideoOverlayProps {
 const VideoOverlay = ({ 
   isOpen, 
   onClose, 
-  videoId="dy80Ty7HQTk",
+  videoId,
   title = "Our Story" 
 }: VideoOverlayProps) => {
   return (

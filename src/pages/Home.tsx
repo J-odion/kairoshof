@@ -30,7 +30,7 @@ const Home = () => {
       description: "Luxury sustainable residential development in Abuja's prime location with modern amenities and eco-friendly features.",
       status: "available" as const,
       features: ["3-5 Bedrooms", "Smart Home", "Solar Power", "24/7 Security", "Swimming Pool", "Gym"],
-      Image: "/5-2.jpg"
+      Image: "/8.jpg"
     },
     {
       title: "Hof Court",
@@ -39,7 +39,7 @@ const Home = () => {
       description: "Premium family homes designed with sustainable living principles and community-focused amenities.",
       status: "available" as const,
       features: ["2-4 Bedrooms", "Green Spaces", "Playground", "Community Center", "Parking", "Gardens"],
-      Image: "/5-2.jpg"
+      Image: "/9.jpg"
     },
     {
       title: "Hof Community",
@@ -48,7 +48,7 @@ const Home = () => {
       description: "An integrated community development featuring residential, commercial, and recreational facilities.",
       status: "coming-soon" as const,
       features: ["Mixed Development", "Shopping Center", "Schools", "Hospital", "Parks", "Transport Hub"],
-      Image: "/5-2.jpg"
+      Image: "/10.jpg"
     },
     {
       title: "Hof County",
@@ -57,7 +57,7 @@ const Home = () => {
       description: "Exclusive luxury estates with premium finishes and world-class amenities for discerning families.",
       status: "coming-soon" as const,
       features: ["Luxury Villas", "Golf Course", "Spa", "Fine Dining", "Concierge", "Private Security"],
-      Image: "/5-2.jpg"
+      Image: "/11.jpg"
     }
   ];
 
@@ -108,7 +108,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className=" pt-56">
+      <div className=" pt-[40px]">
         <Hero />
       </div>
 
