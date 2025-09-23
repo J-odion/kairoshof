@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Award, Leaf, Users, Globe, Heart, Star, MessageSquare, Sparkles, Calendar, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import TestimonialCard from "@/components/TestimonialCard";
 
 const Home = () => {
   const [visibleCards, setVisibleCards] = useState(0);
@@ -52,7 +53,7 @@ const Home = () => {
     },
     {
       title: "Hof County",
-      location: "COMING SOON", 
+      location: "COMING SOON",
       price: "PRICE ON REQUEST",
       description: "Exclusive luxury estates with premium finishes and world-class amenities for discerning families.",
       status: "coming-soon" as const,
@@ -87,22 +88,23 @@ const Home = () => {
   const testimonials = [
     {
       name: "Mrs. Adaora Okafor",
-      role: "Hof City Resident", 
-      content: "Living in Hof City has been a dream come true. The sustainable features and community atmosphere make it perfect for raising our children.",
-      rating: 5
+      role: "Hof City Resident",
+      rating: 5,
+      audio: "/audios/1.mp3"
     },
     {
       name: "Dr. Ibrahim Hassan",
       role: "Hof Court Owner",
-      content: "The quality of construction and attention to detail is exceptional. Kairos Hof delivered exactly what they promised.",
-      rating: 5
+      rating: 5,
+      audio: "/audios/2.mp3"
     },
     {
       name: "Mr. John Okwu",
       role: "Property Investor",
-      content: "I've invested in multiple Kairos Hof properties. Their commitment to sustainability and quality makes them a reliable partner.",
-      rating: 5
-    }
+      rating: 5,
+      audio: "/audios/3.mp3"
+    },
+    
   ];
 
   return (
@@ -124,7 +126,7 @@ const Home = () => {
               Celebrating <span className="font-bold text-primary">Five Years</span> of Excellence
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Half a decade of building sustainable communities, fostering relationships, 
+              Half a decade of building sustainable communities, fostering relationships,
               and making homeownership dreams come true across Nigeria.
             </p>
           </div>
@@ -150,17 +152,12 @@ const Home = () => {
                 </Card>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/anniversary">
-                  <Button variant="luxury" size="lg" className="group w-full sm:w-auto">
+              <div className="flex w-full bg-black flex-col sm:flex-row gap-4">
+                <Link to="/anniversary" className="w-[100%] block sm:w-auto">
+                  <Button variant="luxury" className="group w-[100%] sm:w-auto">
                     <Trophy className="mr-2 h-5 w-5" />
-                    Explore Our Journey
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-                <Link to="/anniversary">
-                  <Button variant="elegant" size="lg" className="w-full sm:w-auto">
                     Anniversary Sale
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </div>
@@ -173,7 +170,7 @@ const Home = () => {
                   <h3 className="text-2xl font-semibold text-foreground">2019 - 2024</h3>
                   <p className="text-muted-foreground">Building Dreams, Creating Communities</p>
                 </div>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">Sustainable Homes Built</span>
@@ -209,6 +206,42 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Projects Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl lg:text-5xl font-light">
+              Our <span className="font-bold text-primary">Developments</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Discover our portfolio of sustainable residential developments designed
+              to create lasting value for families and communities.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-500 ${index < visibleCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+              >
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/products">
+              <Button variant="elegant" size="lg" className="group">
+                View All Projects
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -222,9 +255,9 @@ const Home = () => {
                   Building <span className="font-bold text-primary">Sustainable</span> Futures
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Kairos Hof is an esteemed property development company that builds sustainable 
-                  residential housing options for families. Our core focus lies in providing 
-                  visionary real estate solutions that harmoniously align with the Sustainable 
+                  Kairos Hof is an esteemed property development company that builds sustainable
+                  residential housing options for families. Our core focus lies in providing
+                  visionary real estate solutions that harmoniously align with the Sustainable
                   Development Goals 11 (SDGs).
                 </p>
               </div>
@@ -259,7 +292,7 @@ const Home = () => {
                     <h3 className="text-2xl font-semibold text-foreground">SDG 11 Aligned</h3>
                     <p className="text-muted-foreground">Sustainable Cities and Communities</p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">Renewable Energy</span>
@@ -296,44 +329,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl lg:text-5xl font-light">
-              Our <span className="font-bold text-primary">Developments</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our portfolio of sustainable residential developments designed 
-              to create lasting value for families and communities.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {projects.map((project, index) => (
-              <div 
-                key={index}
-                className={`transition-all duration-500 ${
-                  index < visibleCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-              >
-                <ProjectCard {...project} />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link to="/products">
-              <Button variant="elegant" size="lg" className="group">
-                View All Projects
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -347,20 +342,7 @@ const Home = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="card-luxury">
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic">"{testimonial.content}"</p>
-                  <div className="border-t border-border/50 pt-4">
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </div>
-              </Card>
+              <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </div>
         </div>
@@ -377,7 +359,7 @@ const Home = () => {
               Special <span className="font-bold text-primary">Promotions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Don't miss out on our exclusive offers and seasonal promotions. 
+              Don't miss out on our exclusive offers and seasonal promotions.
               Your dream home awaits with incredible savings and benefits.
             </p>
           </div>
@@ -418,7 +400,7 @@ const Home = () => {
                 Building sustainable residential housing options for families across Nigeria.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <h3 className="font-semibold">Projects</h3>
               <div className="space-y-2 text-sm text-accent-foreground/80">
@@ -454,7 +436,7 @@ const Home = () => {
           </div>
         </div>
       </footer>
-      
+
       <FloatingWidgets />
     </div>
   );

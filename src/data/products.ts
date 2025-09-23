@@ -117,8 +117,8 @@ export const products: Product[] = [
       location: "Abuja"
     },
      gallery: [
-      "/5-2.jpg",
-      "/8.jpg",
+       "/8.jpg",
+       "/5-2.jpg",
       "/9.jpg",
       "/74.jpg",
     ],
@@ -181,9 +181,9 @@ export const products: Product[] = [
       location: "Abuja"
     },
     gallery: [
+      "/9.jpg",
       "/5-2.jpg",
       "/8.jpg",
-      "/9.jpg",
       "/74.jpg",
     ],
     floorPlans: [

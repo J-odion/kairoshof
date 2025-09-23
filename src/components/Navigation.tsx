@@ -43,7 +43,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              Kairos<span className="text-accent">Hof</span>
+              <img src="/Logo.png" alt="Kairos Hof Zenith" className="h-10 w-auto" />
             </div>
           </Link>
 
