@@ -31,7 +31,7 @@ const Home = () => {
       description: "Luxury sustainable residential development in Abuja's prime location with modern amenities and eco-friendly features.",
       status: "available" as const,
       features: ["3-5 Bedrooms", "Smart Home", "Solar Power", "24/7 Security", "Swimming Pool", "Gym"],
-      Image: "/8.jpg"
+      image: "/8.jpg"
     },
     {
       title: "Hof Court",
@@ -40,7 +40,7 @@ const Home = () => {
       description: "Premium family homes designed with sustainable living principles and community-focused amenities.",
       status: "available" as const,
       features: ["2-4 Bedrooms", "Green Spaces", "Playground", "Community Center", "Parking", "Gardens"],
-      Image: "/9.jpg"
+      image: "/9.jpg"
     },
     {
       title: "Hof Community",
@@ -49,7 +49,7 @@ const Home = () => {
       description: "An integrated community development featuring residential, commercial, and recreational facilities.",
       status: "coming-soon" as const,
       features: ["Mixed Development", "Shopping Center", "Schools", "Hospital", "Parks", "Transport Hub"],
-      Image: "/10.jpg"
+      image: "/10.jpg"
     },
     {
       title: "Hof County",
@@ -58,7 +58,7 @@ const Home = () => {
       description: "Exclusive luxury estates with premium finishes and world-class amenities for discerning families.",
       status: "coming-soon" as const,
       features: ["Luxury Villas", "Golf Course", "Spa", "Fine Dining", "Concierge", "Private Security"],
-      Image: "/11.jpg"
+      image: "/13.jpg"
     }
   ];
 
@@ -104,7 +104,7 @@ const Home = () => {
       rating: 5,
       audio: "/audios/3.mp3"
     },
-    
+
   ];
 
   return (
@@ -152,9 +152,9 @@ const Home = () => {
                 </Card>
               </div>
 
-              <div className="flex w-full bg-black flex-col sm:flex-row gap-4">
-                <Link to="/anniversary" className="w-[100%] block sm:w-auto">
-                  <Button variant="luxury" className="group w-[100%] sm:w-auto">
+              <div className="flex w-fullflex-col sm:flex-row gap-4">
+                <Link to="/anniversary" className="">
+                  <Button variant="luxury" size="block" className="w-full group ">
                     <Trophy className="mr-2 h-5 w-5" />
                     Anniversary Sale
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -284,8 +284,16 @@ const Home = () => {
               </Button>
             </div>
 
-            <div className="relative">
-              <Card className="card-luxury p-8 bg-gradient-to-br from-primary/5 to-accent/5">
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+              {/* Image */}
+              <img
+                src="/Sustainable_Development_Goals.png"
+                alt="SDG 11 Aligned"
+                className="w-full object-cover"
+              />
+
+              {/* Card Content (transparent background, inherits wrapper bg) */}
+              <div className="p-8">
                 <div className="space-y-6">
                   <div className="text-center">
                     <Globe className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -303,6 +311,7 @@ const Home = () => {
                         <span className="text-sm font-medium">85%</span>
                       </div>
                     </div>
+
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">Green Spaces</span>
                       <div className="flex items-center">
@@ -312,6 +321,7 @@ const Home = () => {
                         <span className="text-sm font-medium">90%</span>
                       </div>
                     </div>
+
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">Water Conservation</span>
                       <div className="flex items-center">
@@ -323,12 +333,13 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
-
+      {/* Testimonials Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">

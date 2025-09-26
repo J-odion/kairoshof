@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactFormProps {
@@ -27,7 +27,8 @@ const ContactForm = ({
     message: "",
     projectInterest: "",
     budget: "",
-    newsletter: false
+    newsletter: false,
+    contactMethod: "email" // default is email
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -53,18 +54,54 @@ const ContactForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    if (formData.contactMethod === "whatsapp") {
+      // Save form to database
+      await fetch("/api/saveform", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      // Construct WhatsApp message
+      const message = `
+Hello, my name is ${formData.name}.
+Email: ${formData.email}
+Phone: ${formData.phone}
+Interest: ${formData.projectInterest || "N/A"}
+Budget: ${formData.budget || "N/A"}
 
-    // Reset form after success
+Message:
+${formData.message}
+      `.trim();
+
+      // Open WhatsApp
+      const phone = "2349133939340"; // Nigeria number format without leading 0
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      toast({
+        title: "Redirecting to WhatsApp",
+        description: "We’ve also saved your inquiry in our system.",
+      });
+    } else {
+      // Email API (normal behavior)
+      await fetch("/api/sendmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    }
+
+    // Reset form
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({
@@ -74,7 +111,8 @@ const ContactForm = ({
         message: "",
         projectInterest: "",
         budget: "",
-        newsletter: false
+        newsletter: false,
+        contactMethod: "email",
       });
     }, 3000);
   };
@@ -92,7 +130,7 @@ const ContactForm = ({
           </div>
           <h3 className="text-xl font-semibold text-foreground">Thank You!</h3>
           <p className="text-muted-foreground">
-            Your message has been sent successfully. Our team will contact you within 24 hours.
+            Your message has been processed. If WhatsApp was selected, a chat window should be open now.
           </p>
         </div>
       </Card>
@@ -208,6 +246,24 @@ const ContactForm = ({
             </Label>
           </div>
 
+          {/* Contact method selection */}
+          <div className="space-y-2">
+            <Label htmlFor="contactMethod">Preferred Contact Method</Label>
+            <Select value={formData.contactMethod} onValueChange={(value) => handleInputChange("contactMethod", value)}>
+              <SelectTrigger className="h-12">
+                <SelectValue placeholder="Choose contact method" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="email">
+                  <Mail className="h-4 w-4 inline mr-2" /> Email
+                </SelectItem>
+                <SelectItem value="whatsapp">
+                  <MessageSquare className="h-4 w-4 inline mr-2" /> WhatsApp
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
           <Button
             type="submit"
             variant="luxury"
@@ -221,7 +277,7 @@ const ContactForm = ({
               </>
             ) : (
               <>
-                Send Message
+                {formData.contactMethod === "whatsapp" ? "Send via WhatsApp" : "Send via Email"}
                 <Send className="ml-2 h-4 w-4" />
               </>
             )}

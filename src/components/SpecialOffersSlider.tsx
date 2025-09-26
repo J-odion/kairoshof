@@ -34,30 +34,6 @@ const SpecialOffersSlider = () => {
       link: "/anniversary",
       buttonText: "Claim Your Discount"
     },
-    {
-      id: 3,
-      title: "Yuletide Home Special",
-      subtitle: "Holiday Season Exclusive",
-      discount: "Save ₦5,000,000",
-      description: "Exclusive holiday pricing on luxury sustainable homes with premium amenities and flexible payment plans.",
-      endDate: new Date("2025-12-25T23:59:59"),
-      icon: Gift,
-      gradient: "from-green-500/20 to-emerald-500/20",
-      link: "/products",
-      buttonText: "View Properties"
-    },
-    {
-      id: 4,
-      title: "Early Bird Special",
-      subtitle: "Next Phase Launch",
-      discount: "25% OFF",
-      description: "Secure your spot in our upcoming sustainable development at special pre-launch prices.",
-      endDate: new Date("2025-04-30T23:59:59"),
-      icon: Percent,
-      gradient: "from-purple-500/20 to-violet-500/20",
-      link: "/products",
-      buttonText: "Reserve Now"
-    }
   ];
 
   const nextOffer = () => {
