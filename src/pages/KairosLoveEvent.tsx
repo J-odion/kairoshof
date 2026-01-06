@@ -60,7 +60,7 @@ const KairosLoveEvent = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-red-500/10 via-pink-500/10 to-background">
+      <section className="pt-52 pb-16 bg-gradient-to-br from-red-500/10 via-pink-500/10 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="fade-in-up">

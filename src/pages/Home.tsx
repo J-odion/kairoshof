@@ -110,7 +110,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className=" pt-[40px]">
+      <div className=" pt-[50px]">
         <Hero />
       </div>
 

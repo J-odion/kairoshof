@@ -77,7 +77,7 @@ const Navigation = () => {
             </Button>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
-              <span>02013309460</span>
+              <span>07074742533</span>
             </div>
             <Button variant="luxury" size="sm" onClick={() => setShowSiteVisitForm(true)}>
               Get Started
