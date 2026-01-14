@@ -36,20 +36,20 @@ const Anniversary = () => {
 
   const highlights = [
     {
-      title: "5 Years of Excellence",
-      description: "Celebrating half a decade of building dreams and sustainable communities",
+      title: "Security",
+      description: "Handled by the Clusta smart network (guest access/management).",
       icon: Award,
       color: "from-gold-500/20 to-yellow-500/20"
     },
     {
-      title: "1000+ Families Housed",
-      description: "Proud to have provided homes for over 1,000 families across Nigeria",
+      title: "Infrastructure",
+      description: "Guaranteed by 24/7 Off-grid Power and Water Supply.",
       icon: Heart,
       color: "from-red-500/20 to-pink-500/20"
     },
     {
-      title: "50+ Awards Won",
-      description: "Recognition for our commitment to sustainable development and excellence",
+      title: "Trust",
+      description: "Proven by Weekly Site Progress Updates (Live videos/drones).",
       icon: Star,
       color: "from-blue-500/20 to-cyan-500/20"
     }
@@ -92,12 +92,13 @@ const Anniversary = () => {
           <div className="space-y-8">
             <Badge className="bg-gold-500/10 text-gold-600 border-gold-500/20 text-lg px-6 py-2">
               <Sparkles className="mr-2 h-5 w-5" />
-              5 Years Anniversary Celebration
+              Kairoshof 2026 
             </Badge>
             
             <h1 className="text-6xl lg:text-8xl font-light leading-tight">
-              <span className="block text-primary font-bold">5 Years</span>
-              <span className="block">of Building Dreams</span>
+              <span className="block text-primary font-bold">The Future</span>
+              <span className="block">is</span>
+              <span className="block text-primary font-bold">Home</span>
             </h1>
             
             <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -105,10 +106,10 @@ const Anniversary = () => {
               community building, and making homeownership dreams come true across Nigeria.
             </p>
             
-            <div className="bg-card/50 backdrop-blur-sm justify-center items-center rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
+            {/* <div className="bg-card/50 backdrop-blur-sm justify-center items-center rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
               <h3 className="text-2xl font-semibold text-foreground mb-4">Anniversary Sale Ends In:</h3>
               <CountdownTimer targetDate={saleEndDate} />
-            </div>
+            </div> */}
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
