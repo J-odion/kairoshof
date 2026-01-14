@@ -38,7 +38,7 @@ const VideoOverlay = ({
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+              src={`${videoId}?autoplay=1&rel=0&modestbranding=1` }
               title={title}
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

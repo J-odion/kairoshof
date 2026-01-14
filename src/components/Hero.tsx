@@ -45,7 +45,7 @@ const Hero = () => {
 
     // Walls
     const walls = [
-      Bodies.rectangle(width / 2, -10, width, 20, { isStatic: true }),
+      Bodies.rectangle(width / 2, -10, width, 20, { isStatic: false }),
       Bodies.rectangle(width / 2, height + 10, width, 20, { isStatic: true }),
       Bodies.rectangle(-10, height / 2, 20, height, { isStatic: true }),
       Bodies.rectangle(width + 10, height / 2, 20, height, { isStatic: true }),
@@ -53,7 +53,7 @@ const Hero = () => {
     World.add(world, walls);
 
     // Images as bouncing bodies
-    const imgs = ["/favicon-1.png", "/favicon-1.png", "/favicon-1.png"];
+    const imgs = ["/favicon-1.png"];
     const particles = Array.from({ length: 6 }).map(() => {
       const size = 50 + Math.random() * 30;
       const body = Bodies.circle(
@@ -158,9 +158,9 @@ const Hero = () => {
 
   const stats = [
     { icon: Building, value: "50+", label: "Properties Developed" },
-    { icon: Users, value: "1000+", label: "Happy Families" },
-    { icon: Award, value: "5+", label: "Awards Won" },
-    { icon: Star, value: "4.9", label: "Client Rating" },
+    { icon: Users, value: "500+", label: "Happy Families" },
+    { icon: Award, value: "10+", label: "Awards Won" },
+    { icon: Star, value: "4.5", label: "Client Rating" },
   ];
 
   return (

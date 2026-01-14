@@ -27,7 +27,7 @@ const Home = () => {
     {
       title: "Hof City",
       location: "IDU - ABUJA",
-      price: "FROM ₦40,000,000",
+      price: "Price on request",
       description: "Luxury sustainable residential development in Abuja's prime location with modern amenities and eco-friendly features.",
       status: "available" as const,
       features: ["3-5 Bedrooms", "Smart Home", "Solar Power", "24/7 Security", "Swimming Pool", "Gym"],
@@ -36,7 +36,7 @@ const Home = () => {
     {
       title: "Hof Court",
       location: "KARMO, JAHI, KAFE",
-      price: "FROM ₦35,000,000",
+      price: "Price on request",
       description: "Premium family homes designed with sustainable living principles and community-focused amenities.",
       status: "available" as const,
       features: ["2-4 Bedrooms", "Green Spaces", "Playground", "Community Center", "Parking", "Gardens"],
@@ -87,23 +87,23 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: "Mrs. Adaora Okafor",
+      name: "Mrs. Lilian",
       role: "Hof City Resident",
       rating: 5,
-      audio: "/audios/1.mp3"
+      audio: "/audios/Lillianreview.wav"
     },
     {
-      name: "Dr. Ibrahim Hassan",
+      name: "Mr. Adams",
       role: "Hof Court Owner",
       rating: 5,
-      audio: "/audios/2.mp3"
+      audio: "/audios/Adamsreview.wav"
     },
-    {
-      name: "Mr. John Okwu",
-      role: "Property Investor",
-      rating: 5,
-      audio: "/audios/3.mp3"
-    },
+    // {
+    //   name: "Mr. John Okwu",
+    //   role: "Property Investor",
+    //   rating: 5,
+    //   audio: "/audios/3.mp3"
+    // },
 
   ];
 
@@ -135,15 +135,15 @@ const Home = () => {
             <div className="space-y-8">
               <div className="grid grid-cols-2 gap-6">
                 <Card className="card-luxury p-6 text-center bg-gradient-to-br from-primary/5 to-accent/5">
-                  <div className="text-3xl font-bold text-primary mb-2">1000+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
                   <div className="text-sm text-muted-foreground">Families Housed</div>
                 </Card>
                 <Card className="card-luxury p-6 text-center bg-gradient-to-br from-green-500/5 to-emerald-500/5">
-                  <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
                   <div className="text-sm text-muted-foreground">Awards Won</div>
                 </Card>
                 <Card className="card-luxury p-6 text-center bg-gradient-to-br from-blue-500/5 to-cyan-500/5">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </Card>
                 <Card className="card-luxury p-6 text-center bg-gradient-to-br from-purple-500/5 to-violet-500/5">

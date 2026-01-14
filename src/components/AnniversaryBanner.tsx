@@ -15,17 +15,17 @@ const AnniversaryBanner = () => {
           <div className="animate-marquee whitespace-nowrap flex items-center space-x-8">
             <div className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
-              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties! 🎉</span>
+              <span className="font-medium">🏠🏠 The Future is Home</span>
             </div>
             <div className="flex items-center space-x-2">
               <span>✨ Limited Time Offer - September to December 2024 ✨</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>🏠🏠 Dream Home Deals - Exclusive Savings on Premium Properties</span>
+              <span>The Future is Smart</span>
             </div>
             <div className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
-              <span className="font-medium">🎉 5th Anniversary Sale - Up to 30% OFF All Properties! 🎉</span>
+              <span className="font-medium">🎉 Smart Security. Sustainable Living. No Compromise. 🎉</span>
             </div>
           </div>
         </div>

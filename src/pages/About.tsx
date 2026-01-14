@@ -24,9 +24,9 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: Building, value: "100+", label: "Hectares Developed" },
-    { icon: Users, value: "3000+", label: "Families Housed" },
-    { icon: Award, value: "5+", label: "Awards Won" },
+    { icon: Building, value: "50+", label: "Properties Developed" },
+    { icon: Users, value: "500+", label: "Happy Family" },
+    { icon: Award, value: "10+", label: "Awards Won" },
     { icon: Eye, value: "15+", label: "Years Experience" },
   ];
 
@@ -165,7 +165,7 @@ const About = () => {
       <VideoOverlay 
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-        videoId="dQw4w9WgXcQ" // Replace with actual Kairos Hof video ID
+        videoId="https://www.youtube.com/embed/dvdarhQFAeA" // Replace with actual Kairos Hof video ID
         title="Our Story - Kairos Hof"
       />
     </div>
