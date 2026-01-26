@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Home, Building, Users, Leaf, Shield, Zap } from "lucide-react";
+import { ArrowRight, Home, Building, Users, Leaf, Shield, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import FloatingWidgets from "@/components/FloatingWidgets";
 import Footer from "@/components/Footer";
@@ -13,6 +13,45 @@ import { products } from "@/data/products";
 const Product = () => {
   const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
   const [isSiteVisitFormOpen, setIsSiteVisitFormOpen] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState({});
+
+  const intervalRefs = useRef({});
+
+  const nextImage = (productId, total) => {
+    setActiveImageIndex((prev) => ({
+      ...prev,
+      [productId]: ((prev[productId] ?? 0) + 1) % total,
+    }));
+  };
+
+  const prevImage = (productId, total) => {
+    setActiveImageIndex((prev) => ({
+      ...prev,
+      [productId]: ((prev[productId] ?? 0) - 1 + total) % total,
+    }));
+  };
+  const startAutoScroll = (productId, total) => {
+    if (intervalRefs.current[productId]) return;
+
+    intervalRefs.current[productId] = setInterval(() => {
+      setActiveImageIndex((prev) => ({
+        ...prev,
+        [productId]: ((prev[productId] ?? 0) + 1) % total,
+      }));
+    }, 5500);
+  };
+
+  const stopAutoScroll = (productId) => {
+    clearInterval(intervalRefs.current[productId]);
+    delete intervalRefs.current[productId];
+  };
+
+  useEffect(() => {
+  return () => {
+    Object.values(intervalRefs.current).forEach(clearInterval);
+  };
+}, []);
+
 
   const productsWithIcons = products.map(product => ({
     ...product,
@@ -42,7 +81,7 @@ const Product = () => {
       <div className="top-0">
         <Navigation />
       </div>
-      
+
       {/* Hero Section */}
       <section className="pt-56 pb-16 bg-gradient-to-br from-background via-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +94,7 @@ const Product = () => {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Discover our range of sustainable housing solutions designed to meet diverse needs 
+                Discover our range of sustainable housing solutions designed to meet diverse needs
                 while maintaining our commitment to luxury and environmental responsibility.
               </p>
             </div>
@@ -68,11 +107,91 @@ const Product = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-1 gap-12">
             {productsWithIcons.map((product, index) => (
-              <Card 
-                key={product.id} 
+              <Card
+                key={product.id}
                 className={`card-luxury overflow-hidden bg-gradient-to-br ${product.gradient} fade-in-up`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
+
+                {/* Image Slider */}
+                <div
+                  className="relative w-full h-[380px] overflow-hidden"
+                  onMouseEnter={() => stopAutoScroll(product.id)}
+                  onMouseLeave={() => startAutoScroll(product.id, product.gallery.length)}
+                  onLoad={() => startAutoScroll(product.id, product.gallery.length)}
+                >
+                  {product.gallery.map((image, index) => {
+                    const isActive = (activeImageIndex[product.id] ?? 0) === index;
+
+                    return (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={product.title}
+                        className={`
+          absolute inset-0 w-full h-full object-cover
+          transition-all duration-[4000ms] ease-out
+          ${isActive
+                            ? "opacity-100 scale-110 z-10"
+                            : "opacity-0 scale-100 z-0"}
+        `}
+                      />
+                    );
+                  })}
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-20" />
+
+                  {/* Arrows */}
+                  {product.gallery.length > 1 && (
+                    <>
+                      <button
+                        onClick={() =>
+                          setActiveImageIndex((prev) => ({
+                            ...prev,
+                            [product.id]:
+                              ((prev[product.id] ?? 0) - 1 + product.gallery.length) %
+                              product.gallery.length,
+                          }))
+                        }
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition"
+                      >
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+
+                      <button
+                        onClick={() =>
+                          setActiveImageIndex((prev) => ({
+                            ...prev,
+                            [product.id]:
+                              ((prev[product.id] ?? 0) + 1) % product.gallery.length,
+                          }))
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition"
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Dots */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+                    {product.gallery.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() =>
+                          setActiveImageIndex((prev) => ({ ...prev, [product.id]: i }))
+                        }
+                        className={`h-2 rounded-full transition-all ${(activeImageIndex[product.id] ?? 0) === i
+                            ? "w-6 bg-white"
+                            : "w-2 bg-white/50"
+                          }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+
                 <div className="p-8">
                   <div className="grid lg:grid-cols-2 gap-8 items-center">
                     {/* Left Content */}
@@ -93,13 +212,13 @@ const Product = () => {
                           </span>
                         )}
                       </div>
-                      
+
                       <p className="text-lg text-muted-foreground leading-relaxed">
                         {product.description}
                       </p>
-                      
+
                       <div className="text-2xl font-bold text-primary">{product.price}</div>
-                      
+
                       <div className="flex flex-col sm:flex-row gap-4">
                         <Button variant="luxury" size="lg" className="group" asChild>
                           <Link to={`/products/${product.slug}`}>
@@ -107,8 +226,8 @@ const Product = () => {
                             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </Button>
-                        <Button 
-                          variant="elegant" 
+                        <Button
+                          variant="elegant"
                           size="lg"
                           onClick={() => setIsBrochureFormOpen(true)}
                         >
@@ -116,7 +235,7 @@ const Product = () => {
                         </Button>
                       </div>
                     </div>
-                    
+
                     {/* Right Content - Features */}
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-foreground mb-4">Key Features</h3>
@@ -143,11 +262,11 @@ const Product = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-6">Sustainability at Core</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every product we create is built with sustainability in mind, aligning with 
+              Every product we create is built with sustainability in mind, aligning with
               SDG 11 for sustainable cities and communities.
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {sustainability.map((item, index) => (
               <Card key={index} className="card-luxury p-6 text-center fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
@@ -173,17 +292,17 @@ const Product = () => {
               Explore our range of sustainable housing solutions and find the perfect fit for your lifestyle and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="luxury" 
-                size="lg" 
+              <Button
+                variant="luxury"
+                size="lg"
                 className="group"
                 onClick={() => setIsSiteVisitFormOpen(true)}
               >
                 Schedule Site Visit
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="elegant" 
+              <Button
+                variant="elegant"
                 size="lg"
                 onClick={() => setIsBrochureFormOpen(true)}
               >
@@ -198,12 +317,12 @@ const Product = () => {
       <FloatingWidgets />
 
       {/* Forms */}
-      <BrochureRequestForm 
+      <BrochureRequestForm
         isOpen={isBrochureFormOpen}
         onClose={() => setIsBrochureFormOpen(false)}
       />
-      
-      <SiteVisitForm 
+
+      <SiteVisitForm
         isOpen={isSiteVisitFormOpen}
         onClose={() => setIsSiteVisitFormOpen(false)}
       />

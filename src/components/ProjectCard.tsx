@@ -37,7 +37,7 @@ const ProjectCard = ({
   };
 
   return (
-    <Card className={`card-luxury group cursor-pointer overflow-hidden ${className}`}>
+    <Card className={`card-luxury group overflow-hidden ${className}`}>
       {/* Image Section */}
       <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-accent/10 to-primary/10 relative overflow-hidden">
         {image ? (

@@ -46,7 +46,7 @@ const ProjectSlider = () => {
 
   return (
     <div className="relative">
-      <Card className="card-luxury p-6 group cursor-pointer overflow-hidden">
+      <Card className="card-luxury p-6 group  overflow-hidden">
         {/* Background Image from gallery[0] */}
         <div className="aspect-video rounded-xl mb-4 relative overflow-hidden">
           <img
