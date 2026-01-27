@@ -47,10 +47,10 @@ const Product = () => {
   };
 
   useEffect(() => {
-  return () => {
-    Object.values(intervalRefs.current).forEach(clearInterval);
-  };
-}, []);
+    return () => {
+      Object.values(intervalRefs.current).forEach(clearInterval);
+    };
+  }, []);
 
 
   const productsWithIcons = products.map(product => ({
@@ -183,8 +183,8 @@ const Product = () => {
                           setActiveImageIndex((prev) => ({ ...prev, [product.id]: i }))
                         }
                         className={`h-2 rounded-full transition-all ${(activeImageIndex[product.id] ?? 0) === i
-                            ? "w-6 bg-white"
-                            : "w-2 bg-white/50"
+                          ? "w-6 bg-white"
+                          : "w-2 bg-white/50"
                           }`}
                       />
                     ))}

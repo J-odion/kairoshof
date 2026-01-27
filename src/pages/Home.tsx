@@ -31,7 +31,8 @@ const Home = () => {
       description: "Luxury sustainable residential development in Abuja's prime location with modern amenities and eco-friendly features.",
       status: "available" as const,
       features: ["3-5 Bedrooms", "Smart Home", "Solar Power", "24/7 Security", "Swimming Pool", "Gym"],
-      image: "/8.jpg"
+      image: "/8.jpg",
+      slug: "hof-city-luxury-homes",
     },
     {
       title: "Hof Court",
@@ -40,7 +41,8 @@ const Home = () => {
       description: "Premium family homes designed with sustainable living principles and community-focused amenities.",
       status: "available" as const,
       features: ["2-4 Bedrooms", "Green Spaces", "Playground", "Community Center", "Parking", "Gardens"],
-      image: "/9.jpg"
+      image: "/9.jpg",
+      slug: "hof-court-premium",
     },
     {
       title: "Hof Community",
@@ -49,16 +51,18 @@ const Home = () => {
       description: "An integrated community development featuring residential, commercial, and recreational facilities.",
       status: "coming-soon" as const,
       features: ["Mixed Development", "Shopping Center", "Schools", "Hospital", "Parks", "Transport Hub"],
-      image: "/10.jpg"
+      image: "/10.jpg",
+      slug: "hof-court-premium",
     },
     {
       title: "Hof County",
-      location: "COMING SOON",
+      location: "Karimo 3",
       price: "PRICE ON REQUEST",
       description: "Exclusive luxury estates with premium finishes and world-class amenities for discerning families.",
       status: "coming-soon" as const,
       features: ["Luxury Villas", "Golf Course", "Spa", "Fine Dining", "Concierge", "Private Security"],
-      image: "/13.jpg"
+      image: "/13.jpg",
+      slug: "hof-court-premium",
     }
   ];
 

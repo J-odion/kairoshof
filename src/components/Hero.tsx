@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Star, Users, Building, Award } from "lucide-react";
+import { ArrowRight, Play, Users, Building, ChevronsLeftRightEllipsis, Trees, LandPlotIcon, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProjectSlider from "./ProjectSlider";
 import BrochureRequestForm from "./BrochureRequestForm";
@@ -15,10 +15,12 @@ const Hero = () => {
   const [isSiteVisitFormOpen, setIsSiteVisitFormOpen] = useState(false);
 
   const stats = [
-    { icon: Building, value: "50+", label: "Properties Developed" },
-    { icon: Users, value: "500+", label: "Happy Families" },
-    { icon: Award, value: "10+", label: "Awards Won" },
-    { icon: Star, value: "4.5", label: "Client Rating" },
+    { icon: Building, value: "8+", label: "Project Site in Abuja" },
+    { icon: Workflow, value: "8000+", label: "Jobs Oppourtunities to be created" },
+    { icon: Users, value: "5000+", label: "Family to be Sheltered" },
+    { icon: LandPlotIcon, value: "800", label: "Hectares combined developments in the next 7 years" },
+    { icon: Trees, value: "100,000", label: "Trees to be planted in Idu HOF City" },
+    { icon: ChevronsLeftRightEllipsis, value: "45%", label: "Female Representation" },
   ];
 
   return (
@@ -65,7 +67,7 @@ const Hero = () => {
 
         {/* Stats */}
         <div className="w-full flex justify-center mx-auto pt-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-4  gap-6 w-full max-w-5xl">
             {stats.map((stat, index) => (
               <div
                 key={index}

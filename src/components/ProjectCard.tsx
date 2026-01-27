@@ -12,6 +12,7 @@ interface ProjectCardProps {
   features: string[];
   image?: string;
   className?: string;
+  slug?: string;
 }
 
 const ProjectCard = ({ 
@@ -22,6 +23,7 @@ const ProjectCard = ({
   status, 
   features,
   image,
+  slug,
   className = ""
 }: ProjectCardProps) => {
   const statusColors = {

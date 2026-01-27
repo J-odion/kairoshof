@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Building, Users, Award, Target, Eye, Heart } from "lucide-react";
+import { Building, Users, Award, Target, Eye, Heart, Workflow, LandPlotIcon, Trees, ChevronsLeftRightEllipsis } from "lucide-react";
 import FloatingWidgets from "@/components/FloatingWidgets";
 import VideoOverlay from "@/components/VideoOverlay";
 import Footer from "@/components/Footer";
@@ -24,11 +24,13 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: Building, value: "50+", label: "Properties Developed" },
-    { icon: Users, value: "500+", label: "Happy Family" },
-    { icon: Award, value: "10+", label: "Awards Won" },
-    { icon: Eye, value: "15+", label: "Years Experience" },
-  ];
+      { icon: Building, value: "8+", label: "Project Site in Abuja" },
+      { icon: Workflow, value: "8000+", label: "Jobs Oppourtunities to be created" },
+      { icon: Users, value: "5000+", label: "Family to be Sheltered" },
+      { icon: LandPlotIcon, value: "800", label: "Hectares combined developments in the next 7 years" },
+      { icon: Trees, value: "100,000", label: "Trees to be planted in Idu HOF City" },
+      { icon: ChevronsLeftRightEllipsis, value: "45%", label: "Female Representation" },
+    ];
 
   return (
     <div className="min-h-screen bg-background">

@@ -75,7 +75,7 @@ export const products: Product[] = [
       "Backup Power"
     ],
     locationDetails: {
-      address: "Plot 123, Maitama District, Abuja",
+      address: "Plot 123, Hof city Idu, Abuja",
       nearbyLandmarks: [
         "Maitama Shopping Mall - 2km",
         "Abuja National Mosque - 5km", 
@@ -139,7 +139,7 @@ export const products: Product[] = [
       "Parks & Recreation"
     ],
     locationDetails: {
-      address: "Hof City Estate, Lugbe District, Abuja",
+      address: "Hof City Estate, Idu District, Abuja",
       nearbyLandmarks: [
         "Nnamdi Azikiwe International Airport - 15km",
         "Airport Road - 2km",
@@ -209,6 +209,133 @@ export const products: Product[] = [
         "Three Arms Zone - 3km",
         "Abuja Central Mosque - 8km",
         "Transcorp Hilton - 4km"
+      ],
+      accessibility: [
+        "VIP road access",
+        "Private helipad access",
+        "Diplomatic zone proximity",
+        "Premium healthcare nearby"
+      ]
+    },
+    highlight: "Ultra Luxury",
+    icon: "Shield",
+    gradient: "from-purple-500/20 to-violet-500/20"
+  },
+  {
+    id: 4,
+    slug: "hof-County",
+    title: "Hof County",
+    subtitle: "Luxury Residential Development",
+    description: "Ultra-luxury residential development featuring world-class amenities and cutting-edge sustainable technology for the discerning homeowner.",
+    fullDescription: "Hof County Premium sets the standard for ultra-luxury living in Nigeria. This exclusive development features bespoke homes with world-class amenities, smart home technology, and uncompromising attention to detail. Each residence is a masterpiece of architectural excellence and sustainable innovation.",
+    price: "Starting from ₦65,000,000",
+    features: [
+      "Ultra-Luxury Design",
+      "Smart Home Technology",
+      "World-Class Amenities",
+      "Concierge Services",
+      "Private Gardens",
+      "Executive Club Access"
+    ],
+    specifications: {
+      bedrooms: "4-6",
+      bathrooms: "4-6",
+      area: "3,000-5,500 sqft",
+      type: "Luxury Villas",
+      location: "Abuja"
+    },
+    gallery: [
+      "/9.jpg",
+      "/5-2.jpg",
+      "/8.jpg",
+      "/74.jpg",
+    ],
+    floorPlans: [
+      "/quad1.png",
+      "/quad2.png",
+      "/quad3.png",
+    ],
+    videoId: "dQw4w9WgXcQ",
+    amenities: [
+      "Private Swimming Pools",
+      "Home Automation",
+      "Concierge Services",
+      "Private Chef Services",
+      "Spa & Wellness Center",
+      "Private Cinema",
+      "Wine Cellar",
+      "Executive Lounge"
+    ],
+    locationDetails: {
+      address: "Hof County, Asokoro District, Abuja",
+      nearbyLandmarks: [
+        "Aso Rock Presidential Villa - 5km",
+        "Three Arms Zone - 3km",
+        "Abuja Central Mosque - 8km",
+        "Transcorp Hilton - 4km"
+      ],
+      accessibility: [
+        "VIP road access",
+        "Private helipad access",
+        "Diplomatic zone proximity",
+        "Premium healthcare nearby"
+      ]
+    },
+    highlight: "Ultra Luxury",
+    icon: "Shield",
+    gradient: "from-purple-500/20 to-violet-500/20"
+  },
+  {
+    id: 5,
+    slug: "hof-Community",
+    title: "Hof Community",
+    subtitle: "Luxury Residential Development",
+    description: "Ultra-luxury residential development featuring world-class amenities and cutting-edge sustainable technology for the discerning homeowner.",
+    fullDescription: "Hof Community Premium sets the standard for ultra-luxury living in Nigeria. This exclusive development features bespoke homes with world-class amenities, smart home technology, and uncompromising attention to detail. Each residence is a masterpiece of architectural excellence and sustainable innovation.",
+    price: "Starting from ₦65,000,000",
+    features: [
+      "Ultra-Luxury Design",
+      "Smart Home Technology",
+      "World-Class Amenities",
+      "Concierge Services",
+      "Private Gardens",
+      "Executive Club Access"
+    ],
+    specifications: {
+      bedrooms: "4-6",
+      bathrooms: "4-6",
+      area: "3,000-5,500 sqft",
+      type: "Luxury Villas",
+      location: "Abuja"
+    },
+    gallery: [
+      "/9.jpg",
+      "/5-2.jpg",
+      "/8.jpg",
+      "/74.jpg",
+    ],
+    floorPlans: [
+      "/quad1.png",
+      "/quad2.png",
+      "/quad3.png",
+    ],
+    videoId: "dQw4w9WgXcQ",
+    amenities: [
+      "Private Swimming Pools",
+      "Home Automation",
+      "Concierge Services",
+      "Private Chef Services",
+      "Spa & Wellness Center",
+      "Private Cinema",
+      "Wine Cellar",
+      "Executive Lounge"
+    ],
+    locationDetails: {
+      address: "Hof Community, Karimo 3, Abuja",
+      nearbyLandmarks: [
+        "Three Arms Zone - 13km",
+        "Abuja Central Mosque - 18km",
+        "Transcorp Hilton - 14km"
       ],
       accessibility: [
         "VIP road access",
