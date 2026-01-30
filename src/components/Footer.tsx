@@ -10,7 +10,7 @@ const Footer = () => {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Products", href: "/products" },
-    { label: "News", href: "/news" },
+    // { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -46,16 +46,23 @@ const Footer = () => {
                 <p className="text-muted-foreground text-sm">
                   Suit 409, Nawa complex, jahi, Abuja, Nigeria
                 </p>
+              </div>
+              <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-muted-foreground text-sm">
                   De Ruijterstrait, 38, 2518 AS Den Haag, The Netherlands
                 </p>
               </div>
+                
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">+234 707 474 2522</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">+234 707 474 2538</p>
               </div>
+                
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <p className="text-muted-foreground text-sm">info@kairoshof.com</p>
