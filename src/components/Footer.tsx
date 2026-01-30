@@ -44,12 +44,17 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <p className="text-muted-foreground text-sm">
-                  Plot 123, Maitama District, Abuja, Nigeria
+                  Suit 409, Nawa complex, jahi, Abuja, Nigeria
+                </p>
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-muted-foreground text-sm">
+                  De Ruijterstrait, 38, 2518 AS Den Haag, The Netherlands
                 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">+234 123 456 7890</p>
+                <p className="text-muted-foreground text-sm">+234 707 474 2522</p>
+                <p className="text-muted-foreground text-sm">+234 707 474 2538</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />

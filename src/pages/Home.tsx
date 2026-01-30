@@ -8,7 +8,7 @@ import SpecialOffersSlider from "@/components/SpecialOffersSlider";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Award, Leaf, Users, Globe, Heart, Star, MessageSquare, Sparkles, Calendar, Trophy } from "lucide-react";
+import { ArrowRight, Award, Leaf, Users, Globe, Heart, Star, MessageSquare, Sparkles, Calendar, Trophy, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import TestimonialCard from "@/components/TestimonialCard";
 
@@ -439,9 +439,21 @@ const Home = () => {
             <div className="space-y-4">
               <h3 className="font-semibold">Connect</h3>
               <div className="space-y-2 text-sm text-accent-foreground/80">
-                <div>02013309460</div>
+                <div>07074742538</div>
+                <div>07074742522</div>
                 <div>info@kairoshof.com</div>
-                <div>Abuja, Nigeria</div>
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                  <p className="text-white-foreground text-sm">
+                    Suit 409, Nawa complex, jahi, Abuja, Nigeria
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                  <p className="text-white-foreground text-sm">
+                    De Ruijterstrait, 38, 2518 AS Den Haag, The Netherlands
+                  </p>
+                </div>
               </div>
             </div>
           </div>
