@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import CustomCursor from "./components/CustomCursor";
 import AnniversaryBanner from "./components/AnniversaryBanner";
 import React from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Sonner />
           <CustomCursor />
           <BrowserRouter>
+          <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

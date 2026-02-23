@@ -32,7 +32,7 @@ export const products: Product[] = [
   
   {
     id: 2,
-    slug: "hof-city-luxury-homes",
+    slug: "hof-city",
     title: "Hof City Luxury Homes",
     subtitle: "Sustainable Gated Community",
     description: "Premium family homes in our award-winning green gated community. Experience luxury sustainable living in 100 hectares of thoughtfully planned development.",
@@ -54,13 +54,18 @@ export const products: Product[] = [
       location: "Abuja"
     },
      gallery: [
-       "/8.jpg",
-       "/5-2.jpg",
-      "/9.jpg",
-      "/74.jpg",
+       "/hofcity3bed/semi1.jpg",
+       "/hofcity3bed/semi2.jpg",
+       "/hofcity3bed/semi3.jpg",
+       "/hofcity3bed/semi4.jpg",
+       "/hofcitquad/iq1.jpg",
+       "/hofcitquad/iq2.jpg",
+       "/hofcitquad/iq3.jpg",
+       "/hofcitquad/iq4.jpg",
     ],
     floorPlans: [
-      "/quad1.png",
+      "/hofcity3bed/floor1.jpg",
+      "/hofcity3bed/gf.jpg",
       "/quad2.png",
       "/quad3.png",
     ],
@@ -79,9 +84,6 @@ export const products: Product[] = [
       address: "Hof City Estate, Idu District, Abuja",
       nearbyLandmarks: [
         "Nnamdi Azikiwe International Airport - 15km",
-        "Airport Road - 2km",
-        "Lugbe Market - 3km",
-        "Federal Capital Territory - 25km"
       ],
       accessibility: [
         "Direct airport road access",
@@ -118,10 +120,11 @@ export const products: Product[] = [
       location: "Abuja"
     },
     gallery: [
-      "/9.jpg",
-      "/5-2.jpg",
-      "/8.jpg",
-      "/74.jpg",
+      "/kafe4b/1.jpg",
+      "/kafe4b/2.jpg",
+      "/kafe4b/3.jpg",
+      "/kafe4b/4.jpg",
+      
     ],
     floorPlans: [
       "/quad1.png",
@@ -156,7 +159,7 @@ export const products: Product[] = [
     },
     highlight: "Ultra Luxury",
     icon: "Shield",
-    gradient: "from-purple-500/20 to-violet-500/20"
+    gradient: "from-red-500/20 to-red-500/40"
   },
   {
     id: 4,
@@ -246,10 +249,11 @@ export const products: Product[] = [
       location: "Abuja"
     },
     gallery: [
-      "/9.jpg",
-      "/5-2.jpg",
-      "/8.jpg",
-      "/74.jpg",
+      "/karimo/ks1.jpg",
+      "/karimo/ks2.jpg",
+      "/karimo/ks3.jpg",
+      "/karimo/ks4.jpg",
+      "/karimo/ks5.jpg",
     ],
     floorPlans: [
       "/quad1.png",
@@ -283,7 +287,7 @@ export const products: Product[] = [
     },
     highlight: "Ultra Luxury",
     icon: "Shield",
-    gradient: "from-purple-500/20 to-violet-500/20"
+    gradient: "from-yellow-500/20 to-yellow-300/40"
   },
   {
     id: 1,
@@ -309,10 +313,13 @@ export const products: Product[] = [
       location: "Abuja"
     },
     gallery: [
-      "/5-2.jpg",
-      "/8.jpg",
-      "/9.jpg",
-      "/74.jpg",
+      "/hofap/1.jpg",
+      "/hofap/2.jpg",
+      "/hofap/3.jpg",
+      "/hofap/4.jpg",
+      "/hofap/5.jpg",
+      "/hofap/6.jpg",
+      "/hofap/7.jpg",
     ],
     floorPlans: [
       "/quad1.png",

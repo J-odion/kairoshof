@@ -105,6 +105,7 @@ const Navigation = () => {
           <div className="py-6 space-y-4 border-t border-border/50">
             {navItems.map((item) => (
               <Link
+              
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
