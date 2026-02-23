@@ -39,35 +39,6 @@ const Footer = () => {
                 Creating extraordinary residential environments that harmoniously align with your dreams and the future of our planet.
               </p>
             </div>
-            
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">
-                  Suit 409, Nawa complex, jahi, Abuja, Nigeria
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-muted-foreground text-sm">
-                  De Ruijterstrait, 38, 2518 AS Den Haag, The Netherlands
-                </p>
-              </div>
-                
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">+234 707 474 2522</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">+234 707 474 2538</p>
-              </div>
-                
-              <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground text-sm">info@kairoshof.com</p>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -86,7 +57,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           {/* Products */}
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4">Our Products</h4>
@@ -103,6 +73,35 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+          {/* Address */}
+          <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-muted-foreground text-sm">
+                  Suit 409, Nawa complex, jahi, Abuja, Nigeria
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-muted-foreground text-sm">
+                  Zeestraat 100, 2518AD, The Hague. Netherlands
+                </p>
+              </div>
+                
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                <p className="text-muted-foreground text-sm">+234 707 474 2522</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                <p className="text-muted-foreground text-sm">+234 707 474 2538</p>
+              </div>
+                
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                <p className="text-muted-foreground text-sm">info@kairoshof.com</p>
+              </div>
+            </div>
         </div>
 
         <Separator className="mb-8" />

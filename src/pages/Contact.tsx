@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import { useState } from "react";
 import ContactForm from "@/components/ContactForm";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,17 +8,18 @@ import FloatingWidgets from "@/components/FloatingWidgets";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
+  const [showSiteVisitForm, setShowSiteVisitForm] = useState(false);
   const offices = [
     {
       country: "Nigeria",
       address: "Suite 409 Nawa Complex, Jahi, Abuja.",
       email: "hello@kairoshof.com",
-      phone: "02013309460",
+      phone: "07074742522",
       hours: "Monday – Friday 9:00 AM – 5:00 PM"
     },
     {
       country: "Netherlands",
-      address: "De Ruijterstraat 38, 2518 AS, Den Haag, Netherlands.",
+      address: "Zeestraat 100, 2518AD, The Hague. Netherlands",
       email: "hello@kairoshof.com",
       phone: "+316 1309 8978",
       hours: "Monday – Friday 9:00 AM – 5:00 PM"
@@ -33,12 +35,15 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8 mb-16">
             <div className="fade-in-up">
+              <button onClick={() => setShowSiteVisitForm(true)} >
+
               <h1 className="text-5xl lg:text-6xl font-light leading-tight mb-6">
                 <span className="block text-foreground">Get In</span>
                 <span className="block bg-gradient-to-r from-primary via-primary-glow to-primary bg-clip-text text-transparent font-bold">
                   Touch
                 </span>
               </h1>
+              </button>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Helping you find the property of your dreams. Creating real value in property and places.
               </p>

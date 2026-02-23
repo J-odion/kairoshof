@@ -29,70 +29,7 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  {
-    id: 1,
-    slug: "z-korting-apartments",
-    title: "Z-Korting Apartments",
-    subtitle: "1 to 3 Bedrooms Available",
-    description: "Affordable luxury apartments with flexible payment plans and sustainable features. Your choice is well covered with our range of 1, 2, and 3 bedroom options.",
-    fullDescription: "Z-Korting Apartments represents the perfect blend of affordability and luxury. Our thoughtfully designed apartments feature sustainable materials, energy-efficient systems, and modern amenities that cater to contemporary living needs. Each unit is meticulously crafted to provide maximum comfort while maintaining our commitment to environmental responsibility.",
-    price: "Starting from ₦15,000,000",
-    features: [
-      "1, 2 & 3 Bedroom Options",
-      "Flexible Payment Plans",
-      "Sustainable Design",
-      "Premium Finishes",
-      "24/7 Security",
-      "Community Facilities"
-    ],
-    specifications: {
-      bedrooms: "1-3",
-      bathrooms: "1-2",
-      area: "650-1,200 sqft",
-      type: "Apartment",
-      location: "Abuja"
-    },
-    gallery: [
-      "/5-2.jpg",
-      "/8.jpg",
-      "/9.jpg",
-      "/74.jpg",
-    ],
-    floorPlans: [
-      "/quad1.png",
-      "/quad2.png",
-      "/quad3.png",
-    ],
-    videoId: "dy80Ty7HQTk",
-    amenities: [
-      "Swimming Pool",
-      "Fitness Center", 
-      "Children's Playground",
-      "24/7 Security",
-      "Parking Space",
-      "Community Hall",
-      "Garden Areas",
-      "Backup Power"
-    ],
-    locationDetails: {
-      address: "Plot 123, Hof city Idu, Abuja",
-      nearbyLandmarks: [
-        "Maitama Shopping Mall - 2km",
-        "Abuja National Mosque - 5km", 
-        "Central Business District - 3km",
-        "International Airport - 45km"
-      ],
-      accessibility: [
-        "Major road access",
-        "Public transportation nearby",
-        "Hospital within 5km",
-        "Schools within 2km"
-      ]
-    },
-    highlight: "Most Popular",
-    icon: "Building",
-    gradient: "from-blue-500/20 to-cyan-500/20"
-  },
+  
   {
     id: 2,
     slug: "hof-city-luxury-homes",
@@ -347,5 +284,69 @@ export const products: Product[] = [
     highlight: "Ultra Luxury",
     icon: "Shield",
     gradient: "from-purple-500/20 to-violet-500/20"
-  }
+  },
+  {
+    id: 1,
+    slug: "z-korting-apartments",
+    title: "Z-Korting Apartments",
+    subtitle: "1 to 3 Bedrooms Available",
+    description: "Affordable luxury apartments with flexible payment plans and sustainable features. Your choice is well covered with our range of 1, 2, and 3 bedroom options.",
+    fullDescription: "Z-Korting Apartments represents the perfect blend of affordability and luxury. Our thoughtfully designed apartments feature sustainable materials, energy-efficient systems, and modern amenities that cater to contemporary living needs. Each unit is meticulously crafted to provide maximum comfort while maintaining our commitment to environmental responsibility.",
+    price: "Starting from ₦15,000,000",
+    features: [
+      "1, 2 & 3 Bedroom Options",
+      "Flexible Payment Plans",
+      "Sustainable Design",
+      "Premium Finishes",
+      "24/7 Security",
+      "Community Facilities"
+    ],
+    specifications: {
+      bedrooms: "1-3",
+      bathrooms: "1-2",
+      area: "650-1,200 sqft",
+      type: "Apartment",
+      location: "Abuja"
+    },
+    gallery: [
+      "/5-2.jpg",
+      "/8.jpg",
+      "/9.jpg",
+      "/74.jpg",
+    ],
+    floorPlans: [
+      "/quad1.png",
+      "/quad2.png",
+      "/quad3.png",
+    ],
+    videoId: "dy80Ty7HQTk",
+    amenities: [
+      "Swimming Pool",
+      "Fitness Center", 
+      "Children's Playground",
+      "24/7 Security",
+      "Parking Space",
+      "Community Hall",
+      "Garden Areas",
+      "Backup Power"
+    ],
+    locationDetails: {
+      address: "Plot 123, Hof city Idu, Abuja",
+      nearbyLandmarks: [
+        "Maitama Shopping Mall - 2km",
+        "Abuja National Mosque - 5km", 
+        "Central Business District - 3km",
+        "International Airport - 45km"
+      ],
+      accessibility: [
+        "Major road access",
+        "Public transportation nearby",
+        "Hospital within 5km",
+        "Schools within 2km"
+      ]
+    },
+    highlight: "Most Popular",
+    icon: "Building",
+    gradient: "from-blue-500/20 to-cyan-500/20"
+  },
 ];

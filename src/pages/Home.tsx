@@ -112,7 +112,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div id="home" className="min-h-screen bg-background">
       <Navigation />
       <div className=" pt-[50px]">
         <Hero />
@@ -429,7 +429,7 @@ const Home = () => {
             <div className="space-y-4">
               <h3 className="font-semibold">Company</h3>
               <div className="space-y-2 text-sm text-accent-foreground/80">
-                <div>About Us</div>
+                <a href="/about">About us</a>
                 <div>News & Insights</div>
                 <div>Careers</div>
                 <div>Contact</div>
