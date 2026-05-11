@@ -1,10 +1,5 @@
-import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, User, X } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Mail } from "lucide-react";
 
 interface BrochureRequestFormProps {
   isOpen: boolean;
@@ -13,58 +8,10 @@ interface BrochureRequestFormProps {
 }
 
 const BrochureRequestForm = ({ isOpen, onClose, productTitle }: BrochureRequestFormProps) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch("https://api.base44.com/api/apps/683ffe0b40d860bd7d8d2c79/functions/websiteLeadWebhook", {
-        method: "POST",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({
-          secret: import.meta.env.VITE_WEBHOOK_SECRET || "YOUR_WEBHOOK_SECRET",
-          form_type: "brochure",
-          full_name: formData.name,
-          email: formData.email,
-        })
-      });
-      
-      const result = await response.json();
-      
-      toast({
-        title: "Request Submitted!",
-        description: `Thank you ${formData.name}! Your brochure request has been received. We'll send it to ${formData.email} shortly.`,
-      });
-      
-      setFormData({ name: "", email: "" });
-      onClose();
-    } catch (error) {
-      console.error("Error submitting brochure request:", error);
-      toast({
-        title: "Submission Error",
-        description: "Something went wrong. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md bg-background/95 backdrop-blur-lg border border-border/50">
-        <DialogHeader>
+      <DialogContent className="max-w-2xl bg-background p-0 overflow-hidden border-none shadow-2xl">
+        <DialogHeader className="p-6 pb-0">
           <DialogTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Mail className="h-6 w-6 text-primary" />
             Request Brochure
@@ -74,60 +21,16 @@ const BrochureRequestForm = ({ isOpen, onClose, productTitle }: BrochureRequestF
           </DialogDescription>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-foreground flex items-center gap-2">
-                <User className="h-4 w-4" />
-                Full Name
-              </Label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Enter your full name"
-                value={formData.name}
-                onChange={(e) => handleInputChange("name", e.target.value)}
-                required
-                className="bg-background/50"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-foreground flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Email Address
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter your email address"
-                value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-                required
-                className="bg-background/50"
-              />
-            </div>
-          </div>
-          
-          <div className="flex gap-3 pt-4">
-            <Button 
-              type="submit" 
-              variant="luxury" 
-              disabled={isSubmitting}
-              className="flex-1"
-            >
-              {isSubmitting ? "Sending..." : "Send Brochure"}
-            </Button>
-            <Button 
-              type="button" 
-              variant="outline" 
-              onClick={onClose}
-              className="px-6"
-            >
-              Cancel
-            </Button>
-          </div>
-        </form>
+        <div className="w-full h-[700px]">
+          <iframe
+            src="https://preview--avera-deal-flow.base44.app/forms/brochure-request"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            className="w-full h-full"
+            title="Brochure Request Form"
+          ></iframe>
+        </div>
       </DialogContent>
     </Dialog>
   );

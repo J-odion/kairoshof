@@ -14,6 +14,8 @@ import Product from "./pages/Product";
 import ProductDetail from "./pages/ProductDetail";
 import KairosLoveEvent from "./pages/KairosLoveEvent";
 import Anniversary from "./pages/Anniversary";
+import ExpressionOfInterest from "./pages/ExpressionOfInterest";
+import ClientRegistration from "./pages/ClientRegistration";
 import NotFound from "./pages/NotFound";
 import CustomCursor from "./components/CustomCursor";
 import AnniversaryBanner from "./components/AnniversaryBanner";
@@ -58,6 +60,8 @@ const App = () => (
               <Route path="/products/:slug" element={<ProductDetail />} />
               <Route path="/kairoslove-event" element={<KairosLoveEvent />} />
               <Route path="/anniversary" element={<Anniversary />} />
+              <Route path="/expression-of-interest" element={<ExpressionOfInterest />} />
+              <Route path="/client-registration" element={<ClientRegistration />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
