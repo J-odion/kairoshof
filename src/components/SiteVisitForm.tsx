@@ -23,7 +23,7 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
 
         <div className="w-full h-[700px]">
           <iframe
-            src="https://preview--avera-deal-flow.base44.app/forms/site-visit"
+            src="https://avera-deal-flow.base44.app/forms/site-visit"
             width="100%"
             height="100%"
             frameBorder="0"

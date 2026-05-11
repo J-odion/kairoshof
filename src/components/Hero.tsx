@@ -92,7 +92,7 @@ const Hero = () => {
       <VideoOverlay
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-        videoId="dQw4w9WgXcQ"
+        videoId="dy80Ty7HQTk"
         title="Kairos Hof Story"
       />
 

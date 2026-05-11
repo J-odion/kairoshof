@@ -115,7 +115,7 @@ const Anniversary = () => {
               <Button 
                 variant="luxury" 
                 size="lg"
-                onClick={() => openVideo("dQw4w9WgXcQ")}
+                onClick={() => openVideo("dy80Ty7HQTk")}
                 className="group text-lg px-8 py-4"
               >
                 <Play className="mr-3 h-6 w-6" />
@@ -239,7 +239,7 @@ const Anniversary = () => {
               <Card 
                 key={index} 
                 className="card-luxury overflow-hidden cursor-pointer group"
-                onClick={() => openVideo("dQw4w9WgXcQ")}
+                onClick={() => openVideo("dy80Ty7HQTk")}
               >
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

@@ -22,7 +22,7 @@ const ExpressionOfInterest = () => {
           <Card className="card-luxury p-0 overflow-hidden border-none shadow-2xl">
             <div className="w-full h-[800px]">
               <iframe
-                src="https://preview--avera-deal-flow.base44.app/forms/expression-of-interest"
+                src="https://avera-deal-flow.base44.app/forms/expression-of-interest"
                 width="100%"
                 height="100%"
                 frameBorder="0"

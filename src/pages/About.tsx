@@ -167,7 +167,7 @@ const About = () => {
       <VideoOverlay 
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
-        videoId="https://www.youtube.com/embed/dvdarhQFAeA" // Replace with actual Kairos Hof video ID
+        videoId="dy80Ty7HQTk"
         title="Our Story - Kairos Hof"
       />
     </div>

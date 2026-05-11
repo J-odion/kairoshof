@@ -20,7 +20,7 @@ const ContactForm = ({
 
         <div className="w-full h-[700px] rounded-xl overflow-hidden">
           <iframe
-            src="https://preview--avera-deal-flow.base44.app/forms/contact-us"
+            src="https://avera-deal-flow.base44.app/forms/contact-us"
             width="100%"
             height="100%"
             frameBorder="0"

@@ -92,9 +92,11 @@ const ProjectSlider = () => {
         </div>
 
         {/* CTA Button */}
-        <Button variant="outline" className="group w-full">
-          View Details
-          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        <Button variant="outline" className="group w-full" asChild>
+          <Link to={`/products/${project.slug}`}>
+            View Details
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </Button>
       </Card>
 

@@ -23,7 +23,7 @@ const BrochureRequestForm = ({ isOpen, onClose, productTitle }: BrochureRequestF
         
         <div className="w-full h-[700px]">
           <iframe
-            src="https://preview--avera-deal-flow.base44.app/forms/brochure-request"
+            src="https://avera-deal-flow.base44.app/forms/brochure-request"
             width="100%"
             height="100%"
             frameBorder="0"

@@ -175,7 +175,7 @@ const ProjectCard = ({
           
           <div className="w-full h-[600px]">
             <iframe
-              src="https://preview--avera-deal-flow.base44.app/forms/get-notified"
+              src="https://avera-deal-flow.base44.app/forms/get-notified"
               width="100%"
               height="100%"
               frameBorder="0"
