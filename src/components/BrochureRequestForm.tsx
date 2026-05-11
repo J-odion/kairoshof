@@ -37,7 +37,6 @@ const BrochureRequestForm = ({ isOpen, onClose, productTitle }: BrochureRequestF
       });
       
       const result = await response.json();
-      if (result.success) console.log("Lead created:", result.lead_id);
       
       toast({
         title: "Request Submitted!",

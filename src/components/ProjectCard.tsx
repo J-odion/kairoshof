@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, ArrowRight, Calendar, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
@@ -114,11 +115,21 @@ const ProjectCard = ({
               size="sm" 
               className="flex-1 group"
               disabled={status === "sold-out"}
+              asChild={status === "available" && !!slug}
             >
-              {status === "available" ? "View Details" : 
-               status === "coming-soon" ? "Get Notified" : "Sold Out"}
-              {status !== "sold-out" && (
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              {status === "available" && slug ? (
+                <Link to={`/products/${slug}`}>
+                  View Details
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ) : (
+                <>
+                  {status === "available" ? "View Details" : 
+                   status === "coming-soon" ? "Get Notified" : "Sold Out"}
+                  {status !== "sold-out" && (
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  )}
+                </>
               )}
             </Button>
             <Button variant="outline" size="sm">

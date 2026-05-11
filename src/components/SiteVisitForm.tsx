@@ -53,7 +53,6 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
       });
 
       const result = await response.json();
-      if (result.success) console.log("Lead created:", result.lead_id);
 
       toast({
         title: "Site Visit Scheduled!",

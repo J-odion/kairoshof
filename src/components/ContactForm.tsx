@@ -59,7 +59,7 @@ const ContactForm = ({
         method: "POST",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({
-          secret: import.meta.env.VITE_WEBHOOK_SECRET,
+          secret: import.meta.env.VITE_WEBHOOK_SECRET || "YOUR_WEBHOOK_SECRET",
           form_type: "contact",
           full_name: formData.name,
           email: formData.email,
@@ -70,7 +70,6 @@ const ContactForm = ({
       });
 
       const result = await response.json();
-      if (result.success) console.log("Lead created:", result.lead_id);
 
       if (formData.contactMethod === "whatsapp") {
         // Construct WhatsApp message
