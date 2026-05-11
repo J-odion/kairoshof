@@ -22,7 +22,7 @@ const FloatingWidgets = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = "2348034309460"; // Kairos Hof WhatsApp number
+    const phoneNumber = "2347074742533"; // Kairos Hof WhatsApp number
     const message = "Hello! I'm interested in learning more about Kairos Hof properties.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

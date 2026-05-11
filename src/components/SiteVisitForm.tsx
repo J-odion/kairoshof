@@ -32,28 +32,56 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Site Visit Scheduled!",
-      description: `Thank you ${formData.name}! We'll contact you shortly to confirm your visit to ${formData.locationOfInterest}.`,
-    });
-    
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      locationOfInterest: productTitle || "",
-      preferredDate: "",
-      preferredTime: "",
-      purpose: "",
-      buyingTimeline: "",
-      additionalNotes: ""
-    });
-    setIsSubmitting(false);
-    onClose();
+
+    try {
+      const response = await fetch("https://api.base44.com/api/apps/683ffe0b40d860bd7d8d2c79/functions/websiteLeadWebhook", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          secret: import.meta.env.VITE_WEBHOOK_SECRET || "YOUR_WEBHOOK_SECRET",
+          form_type: "site_visit",
+          full_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          location_of_interest: formData.locationOfInterest,
+          preferred_date: formData.preferredDate,
+          preferred_time: formData.preferredTime,
+          purpose_of_visit: formData.purpose,
+          buying_timeline: formData.buyingTimeline,
+          additional_notes: formData.additionalNotes,
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) console.log("Lead created:", result.lead_id);
+
+      toast({
+        title: "Site Visit Scheduled!",
+        description: `Thank you ${formData.name}! We'll contact you shortly to confirm your visit to ${formData.locationOfInterest}.`,
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        locationOfInterest: productTitle || "",
+        preferredDate: "",
+        preferredTime: "",
+        purpose: "",
+        buyingTimeline: "",
+        additionalNotes: ""
+      });
+      onClose();
+    } catch (error) {
+      console.error("Error scheduling site visit:", error);
+      toast({
+        title: "Submission Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -72,7 +100,7 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
             Book a personalized tour of our premium properties
           </DialogDescription>
         </DialogHeader>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -90,7 +118,7 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
                 className="bg-background/50"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="email" className="text-foreground">
                 Email Address *
@@ -122,7 +150,7 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
                 className="bg-background/50"
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="location" className="text-foreground flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
@@ -130,12 +158,17 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
               </Label>
               <Select value={formData.locationOfInterest} onValueChange={(value) => handleInputChange("locationOfInterest", value)}>
                 <SelectTrigger className="bg-background/50">
-                  <SelectValue placeholder="Select a property" />
+                  <SelectValue placeholder="Select a project of interest" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="Z-Korting Apartments">Z-Korting Apartments</SelectItem>
-                  <SelectItem value="Hof City Luxury Homes">Hof City Luxury Homes</SelectItem>
-                  <SelectItem value="Hof Court Premium">Hof Court Premium</SelectItem>
+                  <SelectItem value="Z-Korting Apartments">Idu</SelectItem>
+                  <SelectItem value="Hof City Luxury Homes">Karshi</SelectItem>
+                  <SelectItem value="Hof Court Premium">Karasana</SelectItem>
+                  <SelectItem value="Hof Court Premium">Jahi</SelectItem>
+                  <SelectItem value="Hof Court Premium">Jabi</SelectItem>
+                  <SelectItem value="Hof Court Premium">Karmo</SelectItem>
+                  <SelectItem value="Hof Court Premium">Life Camp</SelectItem>
+                  <SelectItem value="Hof Court Premium">Guzape</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -157,7 +190,7 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
                 min={new Date().toISOString().split('T')[0]}
               />
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="time" className="text-foreground flex items-center gap-2">
                 <Clock className="h-4 w-4" />
@@ -230,19 +263,19 @@ const SiteVisitForm = ({ isOpen, onClose, productTitle }: SiteVisitFormProps) =>
               rows={3}
             />
           </div>
-          
+
           <div className="flex gap-3 pt-4">
-            <Button 
-              type="submit" 
-              variant="luxury" 
+            <Button
+              type="submit"
+              variant="luxury"
               disabled={isSubmitting}
               className="flex-1"
             >
               {isSubmitting ? "Scheduling..." : "Schedule Visit"}
             </Button>
-            <Button 
-              type="button" 
-              variant="outline" 
+            <Button
+              type="button"
+              variant="outline"
               onClick={onClose}
               className="px-6"
             >

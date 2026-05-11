@@ -77,8 +77,8 @@ const Navigation = () => {
             </Button>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" />
-              <span>07074742522</span>
-              <span>07074742538</span>
+              <span>07074742533</span>
+              <span>07074742531</span>
             </div>
             <Button variant="luxury" size="sm" onClick={() => setShowSiteVisitForm(true)}>
               Get Started
@@ -121,8 +121,8 @@ const Navigation = () => {
             <div className="px-4 pt-4 border-t border-border/50">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-4">
                 <Phone className="h-4 w-4" />
-                <span>07074742538</span>
-                <span>07074742522</span>
+                <span>07074742533</span>
+                <span>07074742531</span>
               </div>
               <Button variant="luxury" className="w-full" onClick={() => setShowSiteVisitForm(true)}>
                 Get Started

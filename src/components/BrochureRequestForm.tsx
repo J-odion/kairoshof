@@ -24,17 +24,38 @@ const BrochureRequestForm = ({ isOpen, onClose, productTitle }: BrochureRequestF
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Request Submitted!",
-      description: `Thank you ${formData.name}! Your brochure request has been received. We'll send it to ${formData.email} shortly.`,
-    });
-    
-    setFormData({ name: "", email: "" });
-    setIsSubmitting(false);
-    onClose();
+    try {
+      const response = await fetch("https://api.base44.com/api/apps/683ffe0b40d860bd7d8d2c79/functions/websiteLeadWebhook", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          secret: import.meta.env.VITE_WEBHOOK_SECRET || "YOUR_WEBHOOK_SECRET",
+          form_type: "brochure",
+          full_name: formData.name,
+          email: formData.email,
+        })
+      });
+      
+      const result = await response.json();
+      if (result.success) console.log("Lead created:", result.lead_id);
+      
+      toast({
+        title: "Request Submitted!",
+        description: `Thank you ${formData.name}! Your brochure request has been received. We'll send it to ${formData.email} shortly.`,
+      });
+      
+      setFormData({ name: "", email: "" });
+      onClose();
+    } catch (error) {
+      console.error("Error submitting brochure request:", error);
+      toast({
+        title: "Submission Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {

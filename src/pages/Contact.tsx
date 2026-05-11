@@ -14,7 +14,7 @@ const Contact = () => {
       country: "Nigeria",
       address: "Suite 409 Nawa Complex, Jahi, Abuja.",
       email: "hello@kairoshof.com",
-      phone: "07074742522",
+      phone: "07074742533",
       hours: "Monday – Friday 9:00 AM – 5:00 PM"
     },
     {

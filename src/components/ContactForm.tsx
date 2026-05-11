@@ -15,10 +15,10 @@ interface ContactFormProps {
   description?: string;
 }
 
-const ContactForm = ({ 
-  type = "general", 
+const ContactForm = ({
+  type = "general",
   title = "Get in Touch",
-  description = "Let's discuss your dream home" 
+  description = "Let's discuss your dream home"
 }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -44,7 +44,7 @@ const ContactForm = ({
 
   const budgetRanges = [
     "₦20M - ₦40M",
-    "₦40M - ₦60M", 
+    "₦40M - ₦60M",
     "₦60M - ₦80M",
     "₦80M - ₦100M",
     "₦100M+"
@@ -54,16 +54,27 @@ const ContactForm = ({
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (formData.contactMethod === "whatsapp") {
-      // Save form to database
-      await fetch("/api/saveform", {
+    try {
+      const response = await fetch("https://api.base44.com/api/apps/683ffe0b40d860bd7d8d2c79/functions/websiteLeadWebhook", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          secret: import.meta.env.VITE_WEBHOOK_SECRET,
+          form_type: "contact",
+          full_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          intake_channel: formData.contactMethod === "whatsapp" ? "WhatsApp" : "Form - Contact Us",
+        })
       });
 
-      // Construct WhatsApp message
-      const message = `
+      const result = await response.json();
+      if (result.success) console.log("Lead created:", result.lead_id);
+
+      if (formData.contactMethod === "whatsapp") {
+        // Construct WhatsApp message
+        const message = `
 Hello, my name is ${formData.name}.
 Email: ${formData.email}
 Phone: ${formData.phone}
@@ -72,33 +83,34 @@ Budget: ${formData.budget || "N/A"}
 
 Message:
 ${formData.message}
-      `.trim();
+        `.trim();
 
-      // Open WhatsApp
-      const phone = "2349133939340"; // Nigeria number format without leading 0
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
+        // Open WhatsApp
+        const phone = "2349133939340"; // Nigeria number format without leading 0
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
 
-      setIsSubmitted(true);
-      setIsSubmitting(false);
+        setIsSubmitted(true);
+        toast({
+          title: "Redirecting to WhatsApp",
+          description: "We’ve also saved your inquiry in our system.",
+        });
+      } else {
+        setIsSubmitted(true);
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
       toast({
-        title: "Redirecting to WhatsApp",
-        description: "We’ve also saved your inquiry in our system.",
+        title: "Submission Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
       });
-    } else {
-      // Email API (normal behavior)
-      await fetch("/api/sendmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      setIsSubmitted(true);
+    } finally {
       setIsSubmitting(false);
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
-      });
     }
 
     // Reset form

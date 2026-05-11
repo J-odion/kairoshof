@@ -29,7 +29,7 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  
+
   {
     id: 2,
     slug: "hof-city",
@@ -37,7 +37,7 @@ export const products: Product[] = [
     subtitle: "Sustainable Gated Community",
     description: "Premium family homes in our award-winning green gated community. Experience luxury sustainable living in 100 hectares of thoughtfully planned development.",
     fullDescription: "Hof City represents the future of sustainable living. Spanning 100 hectares, this award-winning development features premium family homes designed with cutting-edge green technology. Our community is built to SDG 11 standards, ensuring sustainable cities and communities for future generations.",
-    price: "Starting from ₦40,000,000",
+    price: "Starting from ₦15,000,000",
     features: [
       "100 Hectares Development",
       "Green Gated Community",
@@ -53,15 +53,15 @@ export const products: Product[] = [
       type: "Detached/Semi-Detached",
       location: "Abuja"
     },
-     gallery: [
-       "/hofcity3bed/semi1.jpg",
-       "/hofcity3bed/semi2.jpg",
-       "/hofcity3bed/semi3.jpg",
-       "/hofcity3bed/semi4.jpg",
-       "/hofcitquad/iq1.jpg",
-       "/hofcitquad/iq2.jpg",
-       "/hofcitquad/iq3.jpg",
-       "/hofcitquad/iq4.jpg",
+    gallery: [
+      "/hofcity3bed/semi1.jpg",
+      "/hofcity3bed/semi2.jpg",
+      "/hofcity3bed/semi3.jpg",
+      "/hofcity3bed/semi4.jpg",
+      "/hofcitquad/iq1.jpg",
+      "/hofcitquad/iq2.jpg",
+      "/hofcitquad/iq3.jpg",
+      "/hofcitquad/iq4.jpg",
     ],
     floorPlans: [
       "/hofcity3bed/floor1.jpg",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     subtitle: "Luxury Residential Development",
     description: "Ultra-luxury residential development featuring world-class amenities and cutting-edge sustainable technology for the discerning homeowner.",
     fullDescription: "Hof Court Premium sets the standard for ultra-luxury living in Nigeria. This exclusive development features bespoke homes with world-class amenities, smart home technology, and uncompromising attention to detail. Each residence is a masterpiece of architectural excellence and sustainable innovation.",
-    price: "Starting from ₦65,000,000",
+    price: "Starting from ₦15,000,000",
     features: [
       "Ultra-Luxury Design",
       "Smart Home Technology",
@@ -124,7 +124,7 @@ export const products: Product[] = [
       "/kafe4b/2.jpg",
       "/kafe4b/3.jpg",
       "/kafe4b/4.jpg",
-      
+
     ],
     floorPlans: [
       "/quad1.png",
@@ -168,7 +168,7 @@ export const products: Product[] = [
     subtitle: "Luxury Residential Development",
     description: "Ultra-luxury residential development featuring world-class amenities and cutting-edge sustainable technology for the discerning homeowner.",
     fullDescription: "Hof County Premium sets the standard for ultra-luxury living in Nigeria. This exclusive development features bespoke homes with world-class amenities, smart home technology, and uncompromising attention to detail. Each residence is a masterpiece of architectural excellence and sustainable innovation.",
-    price: "Starting from ₦65,000,000",
+    price: "Starting from ₦15,000,000",
     features: [
       "Ultra-Luxury Design",
       "Smart Home Technology",
@@ -232,7 +232,7 @@ export const products: Product[] = [
     subtitle: "Luxury Residential Development",
     description: "Ultra-luxury residential development featuring world-class amenities and cutting-edge sustainable technology for the discerning homeowner.",
     fullDescription: "Hof Community Premium sets the standard for ultra-luxury living in Nigeria. This exclusive development features bespoke homes with world-class amenities, smart home technology, and uncompromising attention to detail. Each residence is a masterpiece of architectural excellence and sustainable innovation.",
-    price: "Starting from ₦65,000,000",
+    price: "Starting from ₦15,000,000",
     features: [
       "Ultra-Luxury Design",
       "Smart Home Technology",
@@ -329,7 +329,7 @@ export const products: Product[] = [
     videoId: "dy80Ty7HQTk",
     amenities: [
       "Swimming Pool",
-      "Fitness Center", 
+      "Fitness Center",
       "Children's Playground",
       "24/7 Security",
       "Parking Space",
@@ -341,7 +341,7 @@ export const products: Product[] = [
       address: "Plot 123, Hof city Idu, Abuja",
       nearbyLandmarks: [
         "Maitama Shopping Mall - 2km",
-        "Abuja National Mosque - 5km", 
+        "Abuja National Mosque - 5km",
         "Central Business District - 3km",
         "International Airport - 45km"
       ],

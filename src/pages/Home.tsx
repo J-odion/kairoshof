@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Award, Leaf, Users, Globe, Heart, Star, MessageSquare, Sparkles, Calendar, Trophy, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import TestimonialCard from "@/components/TestimonialCard";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   const [visibleCards, setVisibleCards] = useState(0);
@@ -32,7 +33,7 @@ const Home = () => {
       status: "available" as const,
       features: ["3-5 Bedrooms", "Smart Home", "Solar Power", "24/7 Security", "Swimming Pool", "Gym"],
       image: "/8.jpg",
-      slug: "hof-city-luxury-homes",
+      slug: "hof-city",
     },
     {
       title: "Hof Court",
@@ -52,7 +53,7 @@ const Home = () => {
       status: "coming-soon" as const,
       features: ["Mixed Development", "Shopping Center", "Schools", "Hospital", "Parks", "Transport Hub"],
       image: "/10.jpg",
-      slug: "hof-court-premium",
+      slug: "hof-Community",
     },
     {
       title: "Hof County",
@@ -62,7 +63,7 @@ const Home = () => {
       status: "coming-soon" as const,
       features: ["Luxury Villas", "Golf Course", "Spa", "Fine Dining", "Concierge", "Private Security"],
       image: "/13.jpg",
-      slug: "hof-court-premium",
+      slug: "hof-County",
     }
   ];
 
@@ -404,65 +405,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-accent text-accent-foreground py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="text-2xl font-bold">
-                Kairos<span className="text-primary">Hof</span>
-              </div>
-              <p className="text-accent-foreground/80">
-                Building sustainable residential housing options for families across Nigeria.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="font-semibold">Projects</h3>
-              <div className="space-y-2 text-sm text-accent-foreground/80">
-                <div>Hof City</div>
-                <div>Hof Court</div>
-                <div>Hof Community</div>
-                <div>Hof County</div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="font-semibold">Company</h3>
-              <div className="space-y-2 text-sm text-accent-foreground/80">
-                <a href="/about">About us</a>
-                <div>News & Insights</div>
-                <div>Careers</div>
-                <div>Contact</div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="font-semibold">Connect</h3>
-              <div className="space-y-2 text-sm text-accent-foreground/80">
-                <div>07074742538</div>
-                <div>07074742522</div>
-                <div>info@kairoshof.com</div>
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                  <p className="text-white-foreground text-sm">
-                    Suit 409, Nawa complex, jahi, Abuja, Nigeria
-                  </p>
-                </div>
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                  <p className="text-white-foreground text-sm">
-                    De Ruijterstrait, 38, 2518 AS Den Haag, The Netherlands
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-accent-foreground/20 mt-8 pt-8 text-center text-sm text-accent-foreground/60">
-            <p>&copy; 2025 Kairos Hof. All rights reserved. Building sustainable futures.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <FloatingWidgets />
     </div>
