@@ -131,7 +131,7 @@ export const products: Product[] = [
       "/quad2.png",
       "/quad3.png",
     ],
-    videoId: "dQw4w9WgXcQ",
+    videoId: "dy80Ty7HQTk",
     amenities: [
       "Private Swimming Pools",
       "Home Automation",
@@ -195,7 +195,7 @@ export const products: Product[] = [
       "/quad2.png",
       "/quad3.png",
     ],
-    videoId: "dQw4w9WgXcQ",
+    videoId: "dy80Ty7HQTk",
     amenities: [
       "Private Swimming Pools",
       "Home Automation",
@@ -260,7 +260,7 @@ export const products: Product[] = [
       "/quad2.png",
       "/quad3.png",
     ],
-    videoId: "dQw4w9WgXcQ",
+    videoId: "dy80Ty7HQTk",
     amenities: [
       "Private Swimming Pools",
       "Home Automation",

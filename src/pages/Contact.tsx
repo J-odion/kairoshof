@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Mail, Phone, Clock, ExternalLink } from "lucide-react";
 import FloatingWidgets from "@/components/FloatingWidgets";
 import Footer from "@/components/Footer";
+import SiteVisitForm from "@/components/SiteVisitForm";
 
 const Contact = () => {
   const [showSiteVisitForm, setShowSiteVisitForm] = useState(false);
@@ -50,7 +51,12 @@ const Contact = () => {
             </div>
             
             <div className="fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <Button variant="luxury" size="lg" className="group">
+              <Button 
+                variant="luxury" 
+                size="lg" 
+                className="group"
+                onClick={() => setShowSiteVisitForm(true)}
+              >
                 <ExternalLink className="mr-2 h-5 w-5" />
                 Book Appointment
               </Button>
@@ -131,6 +137,10 @@ const Contact = () => {
 
       <Footer />
       <FloatingWidgets />
+      <SiteVisitForm 
+        isOpen={showSiteVisitForm}
+        onClose={() => setShowSiteVisitForm(false)}
+      />
     </div>
   );
 };

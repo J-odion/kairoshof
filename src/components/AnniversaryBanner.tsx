@@ -18,10 +18,7 @@ const AnniversaryBanner = () => {
               <span className="font-medium">🏠🏠 The Future is Home</span>
             </div>
             <div className="flex items-center space-x-2">
-              <span>✨ Limited Time Offer - September to December 2024 ✨</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span>The Future is Smart</span>
+              <span>The Future is Home</span>
             </div>
             <div className="flex items-center space-x-2">
               <Sparkles className="h-4 w-4" />
@@ -29,7 +26,7 @@ const AnniversaryBanner = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="absolute right-4 top-1/2 bg-black transform -translate-y-1/2 flex items-center space-x-2">
           <Link to="/anniversary">
             <Button variant="ghost" size="sm" className="text-white hover:bg-white/20 h-8">
