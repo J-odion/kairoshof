@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/webmail",
+      "destination": "https://c1101041.sgvps.net/webmail/login",
+      "permanent": false
+    },
+    {
+      "source": "/webmail/(.*)",
+      "destination": "https://c1101041.sgvps.net/webmail/login",
+      "permanent": false
+    }
+  ]
+}
