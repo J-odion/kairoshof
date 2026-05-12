@@ -212,12 +212,7 @@ const KairosLoveEvent = () => {
               </div>
             </div>
             
-            <div className="text-center mt-8">
-              <Button variant="luxury" size="lg" className="group">
-                Register Now
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+
           </Card>
         </div>
       </section>

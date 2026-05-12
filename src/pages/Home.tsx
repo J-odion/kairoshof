@@ -15,6 +15,8 @@ import Footer from "@/components/Footer";
 
 const Home = () => {
   const [visibleCards, setVisibleCards] = useState(0);
+  const currentYear = new Date().getFullYear();
+  const yearsOfExcellence = currentYear - 2019;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -128,7 +130,7 @@ const Home = () => {
               5 Years Anniversary Celebration
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-light mb-6">
-              Celebrating <span className="font-bold text-primary">Five Years</span> of Excellence
+              Celebrating <span className="font-bold text-primary">{yearsOfExcellence} Years</span> of Excellence
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Half a decade of building sustainable communities, fostering relationships,
@@ -157,22 +159,14 @@ const Home = () => {
                 </Card>
               </div>
 
-              <div className="flex w-fullflex-col sm:flex-row gap-4">
-                <Link to="/anniversary" className="">
-                  <Button variant="luxury" size="block" className="w-full group ">
-                    <Trophy className="mr-2 h-5 w-5" />
-                    Anniversary Sale
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
+
             </div>
 
             <Card className="card-luxury p-8 bg-gradient-to-br from-gold-500/10 to-yellow-500/10">
               <div className="space-y-6">
                 <div className="text-center">
                   <Calendar className="h-12 w-12 text-gold-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-semibold text-foreground">2019 - 2024</h3>
+                  <h3 className="text-2xl font-semibold text-foreground">2019 - {currentYear}</h3>
                   <p className="text-muted-foreground">Building Dreams, Creating Communities</p>
                 </div>
 

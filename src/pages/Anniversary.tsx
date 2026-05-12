@@ -210,10 +210,7 @@ const Anniversary = () => {
                     ))}
                   </div>
                   
-                  <Button variant="luxury" className="w-full group">
-                    Claim This Offer
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+
                 </div>
               </Card>
             ))}

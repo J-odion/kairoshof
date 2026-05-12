@@ -72,12 +72,7 @@ const SpecialOffersSlider = () => {
             
             <p className="text-muted-foreground">{offer.description}</p>
             
-            <Link to={offer.link}>
-              <Button variant="luxury" className="group">
-                {offer.buttonText}
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+
           </div>
           
           {/* Right Content - Countdown */}

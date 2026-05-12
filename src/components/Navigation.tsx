@@ -99,8 +99,8 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        <div className={`md:hidden transition-all duration-300 overflow-hidden bg-background shadow-lg border-t border-border/50 ${
+          isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <div className="py-6 space-y-4 border-t border-border/50">
             {navItems.map((item) => (
